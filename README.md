@@ -1,3 +1,3 @@
 # Loja-de-Roupas
 # Em Andamento
-Projeto no salesforce utilizando conhecimentos de: administrador, process builder, flow, visualforce page...
+Projeto salesforce utilizando conhecimentos de administrador, process builder, flow, Visualforce Page, LWC, Aura Components e Apex.

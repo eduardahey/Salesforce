@@ -6,4 +6,5 @@ Projeto salesforce utilizando:
 * Flow; 
 * Visualforce Page;
 * LWC;
-* Aura Components e Apex.
+* Aura Components;
+* Apex.

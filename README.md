@@ -8,3 +8,5 @@ Projeto salesforce utilizando:
 * LWC;
 * Aura Components;
 * Apex.
+## Registro de Clientes:
+Visualforce page registra clientes no banco de dados.

@@ -8,13 +8,12 @@ public without sharing class LojaRoupaController {
     public Decimal cep{get; set;}
     public String bairro{get; set;}
     public String logradouro{get; set;}
-    public String endereco{get; set;}
     public Decimal numero{get; set;}
 
     public LojaRoupaController() {}
 
     public List<SelectOption> getOptions(){
-        Schema.DescribeFieldResult describeResult = Customer.Logradouro__c.getDescribe();
+        Schema.DescribeFieldResult describeResult = Customer.Estado__c.getDescribe();
         List<Schema.PicklistEntry> entries = describeResult.getPickListValues();
         List<SelectOption> optionsToReturn = new List<SelectOption>();
         for(Schema.PicklistEntry pEntry : entries){
@@ -36,11 +35,10 @@ public without sharing class LojaRoupaController {
         clients.CEP__c = cep;
         clients.Bairro__c = bairro;
         clients.Logradouro__c = logradouro;
-        clients.Endereco__c = endereco;
         clients.N_mero__c = numero;
 
         try{
-            if(clients.Logradouro__c != 'Nenhum' && clients.Logradouro__c != null){
+            if(clients.Estado__c != 'Nenhum' && clients.Estado__c != null){
                 ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.CONFIRM, 'Cliente cadastrado com sucesso'));
                 insert clients;
                 nome = null;
@@ -52,7 +50,6 @@ public without sharing class LojaRoupaController {
                 cep = null;
                 bairro = null;
                 logradouro = null;
-                endereco = null;
                 numero = null;
             }else{
                 ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR, 'O campo Logradouro é obrigatório'));

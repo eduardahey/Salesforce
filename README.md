@@ -1,4 +1,4 @@
 # Em Andamento
 ## Registro de Clientes:
 * Visualforce page registra clientes no banco de dados;
-* Preenchimento dos campos de endereço automaticamente a partir do cep
+* Preenchimento dos campos de endereço automaticamente a partir do cep usando jquery+json

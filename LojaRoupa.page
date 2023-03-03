@@ -1,4 +1,7 @@
 <apex:page controller="LojaRoupaController">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
 
     <style>
         html
@@ -28,7 +31,7 @@
         } 
     </style>
 
-    <apex:slds/>
+    <apex:slds />
     <div id="conteudo">
         <center>
             <div id="form1" class="slds-escope">
@@ -97,32 +100,6 @@
                                     </tr>
 
                                     <tr>
-                                    	<th data-label="Estado" scope="row">
-                                        	<div class="slds-truncate" title="Estado">
-                                                <label class="slds-form-elemnet__label">Estado</label>
-                                            </div>
-                                        </th>
-                                        <td data-label="Estado">
-                                        	<div class="slds-truncate" title="Estado">
-                                                <apex:inputText value="{!estado}" styleClass="slds-input"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                    	<th data-label="Cidade" scope="row">
-                                        	<div class="slds-truncate" title="Cidade">
-                                                <label class="slds-form-elemnet__label">Cidade</label>
-                                            </div>
-                                        </th>
-                                        <td data-label="Cidade">
-                                        	<div class="slds-truncate" title="Cidade">
-                                                <apex:inputText value="{!cidade}" styleClass="slds-input"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
                                     	<th data-label="Cep" scope="row">
                                         	<div class="slds-truncate" title="Cep">
                                                 <label class="slds-form-elemnet__label">Cep</label>
@@ -130,20 +107,7 @@
                                         </th>
                                         <td data-label="Cep">
                                         	<div class="slds-truncate" title="Cep">
-                                                <apex:inputText value="{!cep}" styleClass="slds-input"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                    	<th data-label="Bairro" scope="row">
-                                        	<div class="slds-truncate" title="Bairro">
-                                                <label class="slds-form-elemnet__label">Bairro</label>
-                                            </div>
-                                        </th>
-                                        <td data-label="Bairro">
-                                        	<div class="slds-truncate" title="Bairro">
-                                                <apex:inputText value="{!bairro}" styleClass="slds-input"/>
+                                                 <apex:inputText id="cep" value="{!cep}" styleClass="slds-input"/>
                                             </div>
                                         </td>
                                     </tr>
@@ -156,24 +120,50 @@
                                         </th>
                                         <td data-label="Logradouro">
                                         	<div class="slds-truncate" title="Logradouro">
-                            					<apex:selectList value="{!logradouro}" multiselect="false" size="1" required="true" styleClass="slds-input">
+                                                <apex:inputText id="logradouro" value="{!logradouro}" styleClass="slds-input"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                    	<th data-label="Cidade" scope="row">
+                                        	<div class="slds-truncate" title="Cidade">
+                                                <label class="slds-form-elemnet__label">Cidade</label>
+                                            </div>
+                                        </th>
+                                        <td data-label="Cidade">
+                                        	<div class="slds-truncate" title="Cidade">
+                                                <apex:inputText id="cidade" value="{!cidade}" styleClass="slds-input"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                    	<th data-label="Bairro" scope="row">
+                                        	<div class="slds-truncate" title="Bairro">
+                                                <label class="slds-form-elemnet__label">Bairro</label>
+                                            </div>
+                                        </th>
+                                        <td data-label="Bairro">
+                                        	<div class="slds-truncate" title="Bairro">
+                                                <apex:inputText id="bairro" value="{!bairro}" styleClass="slds-input"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                    	<th data-label="Estado" scope="row">
+                                        	<div class="slds-truncate" title="Estado">
+                                                <label class="slds-form-elemnet__label">Estado</label>
+                                            </div>
+                                        </th>
+                                        <td data-label="Estado">
+                                        	<div class="slds-truncate" title="Estado">
+                            					<apex:selectList id="uf" value="{!estado}" multiselect="false" size="1" required="true" styleClass="slds-input">
                                                 	<apex:selectOptions value="{!Options}"/>
                                                 </apex:selectList>
                                             </div>
                                         </td>                                        
-                                    </tr>
-
-                                    <tr>
-                                    	<th data-label="Endereco" scope="row">
-                                        	<div class="slds-truncate" title="Endereco">
-                                                <label class="slds-form-elemnet__label">Endereco</label>
-                                            </div>
-                                        </th>
-                                        <td data-label="Endereco">
-                                        	<div class="slds-truncate" title="Endereco">
-                                                <apex:inputText value="{!endereco}" styleClass="slds-input"/>
-                                            </div>
-                                        </td>
                                     </tr>
 
                                     <tr>
@@ -184,7 +174,7 @@
                                         </th>
                                         <td data-label="numero">
                                         	<div class="slds-truncate" title="Numero">
-                                                <apex:inputText value="{!numero}" styleClass="slds-input"/>
+                                                <apex:inputText id="numero" value="{!numero}" styleClass="slds-input"/>
                                             </div>
                                         </td>
                                     </tr>
@@ -200,4 +190,58 @@
             </div>
         </center>
     </div>
+    <script>
+
+        $(document).ready(function() {
+
+            function limpa_formulário_cep() {
+                $("#rua").val("");
+                $("#bairro").val("");
+                $("#cidade").val("");
+                $("#uf").val("");
+                $("#ibge").val("");
+            }
+            
+            $('[id$=cep]').blur(function() {
+
+                var cep = $(this).val().replace(/\D/g, '');
+
+                if (cep != "") {
+
+                    var validacep = /^[0-9]{8}$/;
+
+                    if(validacep.test(cep)) {
+
+                        $('[id$=logradouro]').val("...");
+                        $('[id$=bairro]').val("...");
+                        $('[id$=cidade]').val("...");
+                        $('[id$=uf]').val("...");
+
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+                            if (!("erro" in dados)) {
+                                $('[id$=logradouro]').val(dados.logradouro);
+                                $('[id$=bairro]').val(dados.bairro);
+                                $('[id$=cidade]').val(dados.localidade);
+                                $('[id$=uf]').val(dados.uf);
+                                $('[id$=numero]').focus();
+                            } 
+                            else {
+                                limpa_formulário_cep();
+                                $('[id$=cep]').val("CEP não encontrado.");
+                            }
+                        });
+                    }
+                    else {
+                        limpa_formulário_cep();
+                        $('[id$=cep]').val("Formato de CEP inválido.");
+                    }
+                }
+                else {
+                	limpa_formulário_cep();
+                }
+            });
+        });
+
+    </script>
 </apex:page>
